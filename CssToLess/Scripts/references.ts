@@ -1,0 +1,13 @@
+/// <reference path="typings\jquery\jquery.d.ts"
+/// <reference path="typings\jqueryui\jqueryui.d.ts"
+/// <reference path="typings\jquery.cookie\jquery.cookie.d.ts"
+/// <reference path="typings\jsplumb\jquery.jsPlumb.d.ts"
+/// <reference path="typings\knockout\knockout.amd.d.ts"
+/// <reference path="typings\knockout\knockout.d.ts"
+/// <reference path="typings\knockout.es5\knockout.es5.d.ts"
+/// <reference path="typings\knockout.mapping\knockout.mapping.d.ts"
+/// <reference path="typings\knockout.validation\knockout.validation.d.ts"
+/// <reference path="typings\underscore\underscore.d.ts"
+/// <reference path="typings\underscore-ko\underscore-ko.d.ts"
+/// <reference path="knockout.es5.mapping.ts" />
+/// <reference path="knockout.dirtyFlag.ts" />

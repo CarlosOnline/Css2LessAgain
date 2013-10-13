@@ -1,0 +1,77 @@
+﻿body
+{
+    font-family: 'Segoe UI', sans-serif
+}
+
+span {
+    font-style: italic
+}
+h5 {
+    display: inline;
+}
+
+textarea {
+    float: left;
+}
+
+input[type=button] {
+    font-size: 100px;
+    float: left;
+    background-color: darkseagreen;
+}
+
+div.rules {
+    background-color: gainsboro;
+    border: 1px solid black;
+    float: left;
+    padding: 2px;
+    margin: 2px;
+    margin-left: 4px;
+}
+div.rules-buttons input,button {
+    float: left;
+    margin-top: 2px;
+    margin-right: 3px;
+}
+
+select {
+    width: 85%;
+}
+
+form * {
+    float: left;
+}
+        
+div.rules-values {
+    float: left;
+    width: 300px;
+}
+
+div.less {
+    border: 1px solid grey;
+    height: 300px;
+    background-color: cornsilk;
+    overflow: auto;
+}
+
+div.resources {
+    border: 1px solid grey;
+    height: 200px;
+    background-color: aliceblue;
+    overflow: auto;
+}
+
+span {
+    white-space: pre;
+    font-family: monospace;
+    display: block;
+}
+
+#css {
+}
+
+#less {
+}
+
+#resources {
+}

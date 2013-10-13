@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Css2Less</title>
+    <link rel="stylesheet" href="Content/site.css" type="text/css" />
+</head>
+<body>
+    <h1>Css2Less</h1>
+
+    <div id="content">
+        <p>
+            Convert css to less with variable names based on selectors.<br />
+            Enhanced the code from <a href="http://www.miyconst.com/Blog/View/14/Conver_css_to_less_with_css2less_js">http://www.miyconst.com/Blog/View/14/Conver_css_to_less_with_css2less_js</a>
+        </p>
+        <textarea id="css" rows="10" cols="100">
+            /* Paste your css here and click Go */
+        </textarea>
+        <input type="button" value="Go" onclick="convert();" />
+        <div class="rules">
+            <b>Rules made into variables</b><br />
+            <select multiple="multiple" height="5" data-bind="options: allItems, selectedOptions: selectedItems"></select>
+
+            <div class="rules-buttons">
+                <button data-bind="click: removeSelected, enable: selectedItems().length > 0">Remove</button>
+                <button data-bind="click: sortItems, enable: allItems().length > 1">Sort</button>
+                <form data-bind="submit: addItem">
+                    <input type="text" placeholder="Add css rule: font-color" data-bind='value: itemToAdd, valueUpdate: "afterkeydown"' />
+                    <button type="submit" data-bind="enable: itemToAdd().length > 0">Add</button>
+                </form>
+            </div>
+        </div>
+        <br style="clear: both;" />
+        <h5>Resources only</h5>
+        <div class="resources">
+            <span>
+                <pre id="resources"></pre>
+            </span>
+        </div>
+        <br />
+        <h5>Full Less</h5>
+        <div class="less">
+            <span id="less"></span>
+        </div>
+        <br />
+    </div>
+    <script src="Scripts/jquery-1.7.1.js"></script>
+    <script src="Scripts/knockout-2.2.1.debug.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="linq.js"></script>
+    <script type="text/javascript" src="css2less.js"></script>
+</body>
+</html>
