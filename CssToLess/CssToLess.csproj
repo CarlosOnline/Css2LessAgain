@@ -16,12 +16,37 @@
     <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="Content\site.css" />
-    <Content Include="css2less.js" />
+    <TypeScriptCompile Include="App_Scripts\app.ts" />
+    <TypeScriptCompile Include="App_Scripts\css2less.ts" />
+    <TypeScriptCompile Include="App_Scripts\settings.ts" />
+    <TypeScriptCompile Include="App_Scripts\references.ts" />
+    <TypeScriptCompile Include="App_Scripts\subscriptions.ts" />
+    <TypeScriptCompile Include="App_Scripts\ui.ts" />
+    <TypeScriptCompile Include="App_Scripts\utility.ts" />
+    <TypeScriptCompile Include="App_Scripts\viewModel.ts" />
+    <TypeScriptCompile Include="Scripts\knockout.dirtyFlag.ts" />
+    <TypeScriptCompile Include="Scripts\knockout.es5.mapping.ts" />
+    <TypeScriptCompile Include="Scripts\references.ts" />
+    <TypeScriptCompile Include="Scripts\typings\jquery.cookie\jquery.cookie.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\jqueryui\jqueryui.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\jsplumb\jquery.jsPlumb.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\knockout.es5\knockout.es5.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\knockout.mapping\knockout.mapping.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\knockout.validation\knockout.validation.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\knockout\knockout.amd.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\knockout\knockout.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\underscore-ko\underscore-ko.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\underscore\underscore.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\site.min.css">
+      <DependentUpon>site.less</DependentUpon>
+    </Content>
     <Content Include="default.htm" />
-    <TypeScriptCompile Include="css2less.ts" />
-    <Content Include="linq.js" />
+    <Content Include="App_Scripts\linq.js" />
     <Content Include="packages.config" />
+    <Content Include="Content\site.less" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <None Include="Scripts\jquery-1.7.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
@@ -60,29 +85,11 @@
     <Content Include="Scripts\knockout-2.1.0.js" />
     <Content Include="Scripts\knockout-2.2.1.debug.js" />
     <Content Include="Scripts\knockout-es5.js" />
-    <TypeScriptCompile Include="Scripts\knockout.dirtyFlag.ts" />
-    <TypeScriptCompile Include="Scripts\knockout.es5.mapping.ts" />
     <Content Include="Scripts\knockout.mapping-latest.debug.js" />
-    <TypeScriptCompile Include="Scripts\references.ts" />
-    <TypeScriptCompile Include="Scripts\typings\jquery.cookie\jquery.cookie.d.ts" />
-    <TypeScriptCompile Include="Scripts\typings\jqueryui\jqueryui.d.ts" />
-    <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
-    <TypeScriptCompile Include="Scripts\typings\jsplumb\jquery.jsPlumb.d.ts" />
-    <TypeScriptCompile Include="Scripts\typings\knockout.es5\knockout.es5.d.ts" />
-    <TypeScriptCompile Include="Scripts\typings\knockout.mapping\knockout.mapping.d.ts" />
-    <TypeScriptCompile Include="Scripts\typings\knockout.validation\knockout.validation.d.ts" />
-    <TypeScriptCompile Include="Scripts\typings\knockout\knockout.amd.d.ts" />
-    <TypeScriptCompile Include="Scripts\typings\knockout\knockout.d.ts" />
-    <TypeScriptCompile Include="Scripts\typings\underscore-ko\underscore-ko.d.ts" />
-    <TypeScriptCompile Include="Scripts\typings\underscore\underscore.d.ts" />
+    <Content Include="Scripts\weak-map.js" />
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="app.ts" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Scripts\knockout.dirtyFlag.js.map" />
-    <Content Include="Scripts\knockout.es5.mapping.js.map" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>

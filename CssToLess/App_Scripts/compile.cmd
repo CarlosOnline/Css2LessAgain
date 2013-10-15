@@ -8,7 +8,7 @@ echo.
 pushd %~dp0
 set TsFiles=
 
-for /R %~dp0\Scripts %%X in (*.ts) do (
+for /R %~dp0\..\Scripts %%X in (*.ts) do (
     echo %%~fX
     set TsFiles=!TsFiles! %%~fX
 )

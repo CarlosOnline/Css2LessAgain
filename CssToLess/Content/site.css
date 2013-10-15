@@ -1,77 +1,189 @@
-﻿body
-{
-    font-family: 'Segoe UI', sans-serif
+﻿.boxsizingBorder {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
-
+.rotate-270deg {
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  -webkit-transform-origin: left top;
+  -moz-transform-origin: left top;
+  -ms-transform-origin: left top;
+  -o-transform-origin: left top;
+  transform: rotate(270deg);
+  transform-origin: left top;
+}
+.highlight {
+  background-color: #e3f48e;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#e3f48e), to(#ffffa3));
+  background-image: -webkit-linear-gradient(top, #e3f48e, #ffffa3);
+  background-image: -moz-linear-gradient(top, #e3f48e, #ffffa3);
+  background-image: -o-linear-gradient(top, #e3f48e, #ffffa3);
+  background-image: linear-gradient(to bottom, #e3f48e, #ffffa3);
+}
+.noPadding {
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+}
+.xyz {
+  background-color: yellow;
+}
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+body {
+  font-family: 'Segoe UI', sans-serif;
+}
 span {
-    font-style: italic
+  font-style: italic;
+  white-space: pre;
+  font-family: monospace;
+  display: block;
 }
+h1,
+h2,
+h3,
+h4,
 h5 {
-    display: inline;
+  display: inline;
 }
-
 textarea {
-    float: left;
+  float: left;
 }
-
 input[type=button] {
-    font-size: 100px;
-    float: left;
-    background-color: darkseagreen;
+  font-size: 100px;
+  float: left;
+  background-color: darkseagreen;
 }
-
-div.rules {
-    background-color: gainsboro;
-    border: 1px solid black;
-    float: left;
-    padding: 2px;
-    margin: 2px;
-    margin-left: 4px;
-}
-div.rules-buttons input,button {
-    float: left;
-    margin-top: 2px;
-    margin-right: 3px;
-}
-
 select {
-    width: 85%;
+  width: 85%;
 }
-
-form * {
-    float: left;
+.content {
+  padding-left: 2.5em;
+  float: left;
 }
-        
-div.rules-values {
-    float: left;
-    width: 300px;
-}
-
 div.less {
-    border: 1px solid grey;
-    height: 300px;
-    background-color: cornsilk;
-    overflow: auto;
+  border: 1px solid grey;
+  height: 300px;
+  background-color: cornsilk;
+  overflow: auto;
 }
-
 div.resources {
-    border: 1px solid grey;
-    height: 200px;
-    background-color: aliceblue;
-    overflow: auto;
+  border: 1px solid grey;
+  height: 200px;
+  background-color: aliceblue;
+  overflow: auto;
 }
-
-span {
-    white-space: pre;
-    font-family: monospace;
-    display: block;
+.settings {
+  float: left;
 }
-
-#css {
+#settingsLabel {
+  position: absolute;
+  left: -2px;
+  top: 10em;
+  right: 100%;
+  width: 4em;
+  margin-right: 0.2em;
+  display: block;
+  z-index: 999999;
+  font-size: 180%;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-box-shadow: 2px 3px 4px #808080;
+  -moz-box-shadow: 2px 3px 4px #808080;
+  box-shadow: 2px 3px 4px #808080;
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  -webkit-transform-origin: left top;
+  -moz-transform-origin: left top;
+  -ms-transform-origin: left top;
+  -o-transform-origin: left top;
+  transform: rotate(270deg);
+  transform-origin: left top;
+  background-color: #cccccc;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#cccccc), to(#ddd8dc));
+  background-image: -webkit-linear-gradient(top, #cccccc, #ddd8dc);
+  background-image: -moz-linear-gradient(top, #cccccc, #ddd8dc);
+  background-image: -o-linear-gradient(top, #cccccc, #ddd8dc);
+  background-image: linear-gradient(to bottom, #cccccc, #ddd8dc);
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px;
 }
-
-#less {
+#settingsLabel a:link,
+#settingsLabel a:visited,
+#settingsLabel a:active {
+  text-decoration: none;
+  color: Black;
 }
+#settingsLabel a:hover {
+  background-color: transparent;
+  color: #4d926f;
+}
+#settings {
+  display: block;
+  /* required for inside resizable? */
 
-#resources {
+  font-size: 1em;
+  font-weight: normal;
+  vertical-align: top;
+  border-collapse: collapse;
+  table-layout: fixed;
+  white-space: nowrap;
+  overflow: hidden;
+  padding-left: 0.5em;
+  background-color: #cccccc;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#cccccc), to(#ddd8dc));
+  background-image: -webkit-linear-gradient(top, #cccccc, #ddd8dc);
+  background-image: -moz-linear-gradient(top, #cccccc, #ddd8dc);
+  background-image: -o-linear-gradient(top, #cccccc, #ddd8dc);
+  background-image: linear-gradient(to bottom, #cccccc, #ddd8dc);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  padding-top: 0.4em;
+  margin-top: 0.4em;
+  padding-right: 0.5em;
+  margin-right: 0.5em;
+  margin-left: 0.4em;
+}
+#settings tr {
+  width: 100%;
+}
+#settings table,
+#settings tr,
+#settings td,
+#settings tbody {
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+}
+#settings div.rules {
+  font-weight: normal;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  padding-left: 0.5em;
+  padding-bottom: 2px;
+  border: 1px solid black;
+}
+#settings div.rules-buttons input,
+#settings button {
+  margin-top: 2px;
+  margin-right: 3px;
 }
