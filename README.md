@@ -5,10 +5,10 @@ Convert css to less with variable names based on selectors.<br />
 WebSite: <a href="http://www.joyofplaying.com/Css2Less/">http://www.joyofplaying.com/Css2Less/</a>
 
 
-This version creates varable names from the css selectors:
-1. Uses your selectors for variables names
-2. Allows you to specify which selectors to turn into variables
-3. Fixes bug processing multi-line comments
+This version creates varable names from the css selectors:<br />
+1. Uses your selectors for variables names<br />
+2. Allows you to specify which selectors to turn into variables<br />
+3. Fixes bug processing multi-line comments<br />
 
 Before
 -------
