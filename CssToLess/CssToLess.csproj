@@ -43,6 +43,7 @@
     <Content Include="Content\site.min.css">
       <DependentUpon>site.less</DependentUpon>
     </Content>
+    <Content Include="images\me.jpg" />
     <Content Include="index.htm" />
     <Content Include="App_Scripts\linq.js" />
     <Content Include="packages.config" />
