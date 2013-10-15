@@ -41,6 +41,28 @@ Array.prototype.unique = function () {
     return unique;
 };
 
+interface KnockoutBindingHandlers {
+    numericValue: KnockoutBindingHandler;
+}
+
+ko.bindingHandlers.numericValue = {
+    init: function (element, valueAccessor, allBindingsAccessor, viewModel, bindingContext) {
+        var underlyingObservable = valueAccessor();
+        var interceptor = ko.computed({
+            read: underlyingObservable,
+            write: function (value) {
+                if (!isNaN(value)) {
+                    underlyingObservable(parseFloat(value));
+                }
+            }
+        });
+        ko.bindingHandlers.value.init(element, function () {
+            return interceptor;
+        }, <any> allBindingsAccessor, viewModel, bindingContext);
+    },
+    update: ko.bindingHandlers.value.update
+};
+
 // TODO: Remove
 function method<T>(func: (...args: any[]) => T) {
     return func;

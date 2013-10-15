@@ -92,6 +92,9 @@ class Settings {
             this.save();
         }, true, true);
         this.subscriptions.add(this.options, (data) => {
+            if (typeof (this.options.indentSize) == "string") {
+                this.options.indentSize = parseInt(<any> this.options.indentSize);
+            }
             this.save();
         }, true, true);
     }

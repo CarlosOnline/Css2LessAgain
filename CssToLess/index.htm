@@ -19,9 +19,9 @@
     <link rel="stylesheet" href="Content/site.css" type="text/css" />
 </head>
 <body>
-    <h1>Css2Less</h1>
-    - Convert Css To Less
-    <br />
+    <div class="allContent">
+        <h1 class="title">Css2Less Again</h1>
+        - Convert Css To Less with variable names and expanded rules
     <div class="settings">
         <div id="settingsLabel" style="display: none;">
             <a id="settingslAnchor" class="handle" href="#" data-bind="click: settings.show">Options</a>
@@ -93,20 +93,26 @@
             <br style="clear: both;" />
         </div>
     </div>
-    <div class="content">
-        <textarea id="css" rows="10" cols="100" placeholder="Paste your css here" data-bind="value: css, valueUpdate: 'afterkeydown'">
+        <div class="content">
+            <img class="me" src="images/me.jpg" />
+            <div class="forkMe">
+                Fork me on github: <a href="https://github.com/CarlosOnline/Css2LessAgain">https://github.com/CarlosOnline/Css2LessAgain</a>
+                <br />
+            </div>
+            <textarea id="css" rows="10" cols="100" placeholder="Paste your css here" data-bind="value: css, valueUpdate: 'afterkeydown'">
         </textarea>
-        <input style="display: none;" type="button" value="Go" data-bind="click: go.click, enable: go.enabled" />
-        <br style="clear: both;" />
-        <h5>Variables & Mixins only</h5>
-        <div class="resources">
-            <span data-bind="text: variables"></span>
+            <input style="display: none;" type="button" value="Go" data-bind="click: go.click, enable: go.enabled" />
+            <br style="clear: both;" />
+            <h5>Variables & Mixins only</h5>
+            <div class="resources">
+                <span data-bind="text: variables"></span>
+            </div>
+            <h5>Full Less</h5>
+            <div class="less">
+                <span id="less" data-bind="text: less"></span>
+            </div>
+            <br />
         </div>
-        <h5>Full Less</h5>
-        <div class="less">
-            <span id="less" data-bind="text: less"></span>
-        </div>
-        <br />
     </div>
     <script src="Scripts/jquery-1.7.1.js"></script>
     <script src="Scripts/jquery-ui-1.8.20.js"></script>

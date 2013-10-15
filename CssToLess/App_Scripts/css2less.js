@@ -98,11 +98,7 @@ var css2less = (function () {
             return false;
         };
         this.isKeyReplaceable = function (key) {
-            switch (key) {
-                case "font-size":
-                    return true;
-            }
-            return false;
+            return _this.options.rulesList.indexOf(key) != -1 ? true : false;
         };
         this.makeVariable = function (style, key, value) {
             var name = "@" + _this.makeVariableName(key);

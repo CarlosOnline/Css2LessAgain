@@ -280,7 +280,7 @@ var Knockout;
                 computed: Knockout.mapping.computed,
                 property: Knockout.mapping.property,
                 track: Knockout.mapping.track,
-                track: Knockout.mapping.trackOptions
+                trackOptions: Knockout.mapping.trackOptions
             }
         };
     }

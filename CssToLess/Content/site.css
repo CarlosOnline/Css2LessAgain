@@ -41,6 +41,12 @@
 }
 body {
   font-family: 'Segoe UI', sans-serif;
+  background-color: #ffcc99;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ffcc99), to(GoldenRod));
+  background-image: -webkit-linear-gradient(top, #ffcc99, GoldenRod);
+  background-image: -moz-linear-gradient(top, #ffcc99, GoldenRod);
+  background-image: -o-linear-gradient(top, #ffcc99, GoldenRod);
+  background-image: linear-gradient(to bottom, #ffcc99, GoldenRod);
 }
 span {
   font-style: italic;
@@ -55,6 +61,10 @@ h4,
 h5 {
   display: inline;
 }
+h1.title {
+  display: inline;
+  padding-left: 1.5em;
+}
 textarea {
   float: left;
 }
@@ -66,9 +76,39 @@ input[type=button] {
 select {
   width: 85%;
 }
+div.allContent {
+  margin-bottom: 2em;
+}
 .content {
-  padding-left: 2.5em;
   float: left;
+  width: 60%;
+  border: 2px solid grey;
+  background-color: #d2691e;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#d2691e), to(GoldenRod));
+  background-image: -webkit-linear-gradient(top, #d2691e, GoldenRod);
+  background-image: -moz-linear-gradient(top, #d2691e, GoldenRod);
+  background-image: -o-linear-gradient(top, #d2691e, GoldenRod);
+  background-image: linear-gradient(to bottom, #d2691e, GoldenRod);
+  padding-top: 0.25em;
+  padding-left: 2.5em;
+  padding-right: 0.5em;
+  margin-top: 2em;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+  border-radius: 30px;
+}
+div.forkMe {
+  padding-left: 5em;
+  color: white;
+  font-size: medium;
+  padding-bottom: 0.25em;
+}
+img.me {
+  float: right;
+  height: 80px;
+  width: 80px;
 }
 div.less {
   border: 1px solid grey;
@@ -110,12 +150,12 @@ div.resources {
   -o-transform-origin: left top;
   transform: rotate(270deg);
   transform-origin: left top;
-  background-color: #cccccc;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#cccccc), to(#ddd8dc));
-  background-image: -webkit-linear-gradient(top, #cccccc, #ddd8dc);
-  background-image: -moz-linear-gradient(top, #cccccc, #ddd8dc);
-  background-image: -o-linear-gradient(top, #cccccc, #ddd8dc);
-  background-image: linear-gradient(to bottom, #cccccc, #ddd8dc);
+  background-color: #e6e6ff;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#e6e6ff), to(slateBlue));
+  background-image: -webkit-linear-gradient(top, #e6e6ff, slateBlue);
+  background-image: -moz-linear-gradient(top, #e6e6ff, slateBlue);
+  background-image: -o-linear-gradient(top, #e6e6ff, slateBlue);
+  background-image: linear-gradient(to bottom, #e6e6ff, slateBlue);
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   -ms-border-radius: 8px;
@@ -144,12 +184,12 @@ div.resources {
   white-space: nowrap;
   overflow: hidden;
   padding-left: 0.5em;
-  background-color: #cccccc;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#cccccc), to(#ddd8dc));
-  background-image: -webkit-linear-gradient(top, #cccccc, #ddd8dc);
-  background-image: -moz-linear-gradient(top, #cccccc, #ddd8dc);
-  background-image: -o-linear-gradient(top, #cccccc, #ddd8dc);
-  background-image: linear-gradient(to bottom, #cccccc, #ddd8dc);
+  background-color: #0000dc;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#0000dc), to(slateBlue));
+  background-image: -webkit-linear-gradient(top, #0000dc, slateBlue);
+  background-image: -moz-linear-gradient(top, #0000dc, slateBlue);
+  background-image: -o-linear-gradient(top, #0000dc, slateBlue);
+  background-image: linear-gradient(to bottom, #0000dc, slateBlue);
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;

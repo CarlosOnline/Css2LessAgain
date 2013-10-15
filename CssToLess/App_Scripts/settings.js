@@ -85,6 +85,9 @@ else
             _this.save();
         }, true, true);
         this.subscriptions.add(this.options, function (data) {
+            if (typeof (_this.options.indentSize) == "string") {
+                _this.options.indentSize = parseInt(_this.options.indentSize);
+            }
             _this.save();
         }, true, true);
     }

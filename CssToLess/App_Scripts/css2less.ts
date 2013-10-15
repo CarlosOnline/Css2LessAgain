@@ -115,11 +115,7 @@ class css2less {
     };
 
     isKeyReplaceable = (key: string) => {
-        switch (key) {
-            case "font-size":
-                return true;
-        }
-        return false;
+        return this.options.rulesList.indexOf(key) != -1 ? true : false;
     }
 
     makeVariable = (style: string, key: string, value: string) => {

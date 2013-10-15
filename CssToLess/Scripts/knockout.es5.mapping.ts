@@ -14,7 +14,7 @@ interface KnockoutStatic {
             computed<T>(fn: Function, name?: string): T;
             property<T>(getCallback?: () => T, setCallback?: (value: T) => void): T;
             track<T>(root: T, name?: string, fields?: Array<string>, referenceFields?: Array<string>): T;
-            track<T>(root: T, options: Knockout.es5.mapping.TrackOptions): T;
+            trackOptions<T>(root: T, options: Knockout.es5.mapping.TrackOptions): T;
         }
     };
 }
@@ -266,7 +266,7 @@ module Knockout {
                 computed: Knockout.mapping.computed,
                 property: Knockout.mapping.property,
                 track: Knockout.mapping.track,
-                track: Knockout.mapping.trackOptions,
+                trackOptions: Knockout.mapping.trackOptions,
             },
         };
     }
