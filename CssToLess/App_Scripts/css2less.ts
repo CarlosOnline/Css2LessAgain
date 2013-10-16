@@ -66,6 +66,7 @@ class css2less {
         selectorSeparator: ",\n",
         blockFromNewLine: true,
         blockSeparator: "\n",
+        matchUrl: true,
         updateColors: true,
         vendorMixins: true,
     };
@@ -108,6 +109,16 @@ class css2less {
         value = value.trim();
 
         if (this.options.cssColors.indexOf(value) >= 0 || /^#([0-9a-fA-F]{6}|[0-9a-fA-F]{3})$/gi.test(value) || /(rgba?)\(.*\)/gi.test(value)) {
+            return true;
+        }
+
+        return false;
+    };
+
+    isUrl = (value) => {
+        value = value.trim();
+
+        if (/^url\((.+)\)$/gi.test(value)) {
             return true;
         }
 
@@ -170,7 +181,7 @@ class css2less {
             var parts = r.split(/[:]/gi);
             var key = parts[0].trim();
 
-            result.push(i > 0 ? "\n" : "", key);
+            result.push(i > 0 ? ";\n" : "", key); // TODO: ; after rule is valid everywhere?
 
             var value = parts[1];
             if (!value) {
@@ -184,6 +195,42 @@ class css2less {
                 if (this.isKeyReplaceable(key))
                     return this.makeVariable(key, parent + "-" + key, v);
                 return v;
+            });
+
+            result.push(":", newValues.join(" "), ";");
+        });
+
+        return result.join("");
+    };
+
+    convertIfUrl = (value: string, parent: string) => {
+        value = value.trim();
+        if (!this.isUrl(value))
+            return value;
+
+        var url = '"' + value.replace("url(", "").replace(")", "").replace('"', "").replace("'","") + '"';
+        var name = "@" + this.makeVariableName(parent) + "-url";
+        return "url(" + this.variables.hash(name, url) + ")";
+    }
+
+    matchUrl = (style: string, parent: string) => {
+        var rules = this.convertRules(style);
+        var result = [];
+
+        rules.forEach((r, i) => {
+            var parts = r.split(/[:]/gi);
+            var key = parts[0].trim();
+            var value = parts[1].trim();
+
+            result.push(i > 0 ? "\n" : "", key);
+
+            if (!value) {
+                return;
+            }
+
+            var oldValues = value.split(/\s+/gi);
+            var newValues = oldValues.select((v) => {
+                return this.convertIfUrl(v, parent + "-" + key);
             });
 
             result.push(":", newValues.join(" "), ";");
@@ -206,6 +253,7 @@ class css2less {
             if (!value) {
                 normal_rules[key] = "";
             } else if (this.options.vendorPrefixesReg.test(key)) {
+                console.log("vp", key);
                 var rule_key = key.replace(this.options.vendorPrefixesReg, "");
                 var values = value.split(/\s+/gi);
                 var newValues = [];
@@ -237,7 +285,7 @@ class css2less {
 
             if (normal_rules[key]) {
                 delete normal_rules[key];
-                normal_rules[".vp-" + key + "(" + value.join(", ") + ")"] = "";
+                normal_rules[".mixin-" + key + "(" + value.join(", ") + ");"] = ""; // TODO - ; after mixin???
             }
         }
 
@@ -265,6 +313,10 @@ class css2less {
         if (!selectors || !selectors.length) {
             if (this.options.updateColors) {
                 style = this.matchColor(style, parent)
+            }
+
+            if (this.options.matchUrl) {
+                style = this.matchUrl(style, parent)
             }
 
             if (this.options.vendorMixins) {
@@ -384,7 +436,7 @@ class css2less {
                 args.push("@p" + i);
             }
 
-            less.push(".vp-", key, "(", args.join(", "), ")");
+            less.push(".mixin-", key, "(", args.join(", "), ")");
 
             if (this.options.blockFromNewLine) {
                 less.push("\n");
@@ -399,7 +451,8 @@ class css2less {
                 less.push(vp, "-", key, ":", args.join(" "), ";\n");
             });
 
-            less.push(this.getIndent(indent + this.options.indentSize), key, ":", args.join(" "), ";\n");
+            var cssName = this.convertVendorToCssMixin(key);
+            less.push(this.getIndent(indent + this.options.indentSize), cssName, ":", args.join(" "), ";\n");
             less.push(this.getIndent(indent), "}\n");
         }
 
@@ -408,6 +461,20 @@ class css2less {
         }
 
         return less.join("");
+    };
+
+    /*
+        Turn following border-radius-topleft into border-top-left-radius
+            border-radius-topleft
+            border-radius-top-left
+            border-top-left-radius
+    */
+    convertVendorToCssMixin = (key: string) => {
+        var name = key.replace("top", "top-").replace("bottom", "bottom-").replace("left", "left-").replace("right", "right-");
+        var parts = name.split("-");
+        if (parts.length == 5 && parts[4] == "")
+            return parts[0] + "-" + parts[2] + "-" + parts[3] + "-" + parts[1];
+        return key;
     };
 
     renderResources = (tree?: {}, indent?: number) => {

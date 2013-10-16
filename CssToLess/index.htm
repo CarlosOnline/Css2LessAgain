@@ -94,23 +94,23 @@
         </div>
     </div>
         <div class="content">
-            <img class="me" src="images/me.jpg" />
             <div class="forkMe">
                 Fork me on github: <a href="https://github.com/CarlosOnline/Css2LessAgain">https://github.com/CarlosOnline/Css2LessAgain</a>
-                <br />
             </div>
+            <div>
             <textarea id="css" rows="10" cols="100" placeholder="Paste your css here" data-bind="value: css, valueUpdate: 'afterkeydown'">
-        </textarea>
+            </textarea>
+            <img class="me" src="images/me.jpg" />
+                </div>
             <input style="display: none;" type="button" value="Go" data-bind="click: go.click, enable: go.enabled" />
-            <br style="clear: both;" />
+            <br />
             <h5>Variables & Mixins only</h5>
-            <div class="resources">
-                <span data-bind="text: variables"></span>
-            </div>
+            <br />
+            <textarea id="variables" class="variables" rows="10" cols="100" data-bind="value: variables"></textarea>
+            <br />
             <h5>Full Less</h5>
-            <div class="less">
-                <span id="less" data-bind="text: less"></span>
-            </div>
+            <br />
+            <textarea id="less" class="less" rows="10" cols="100" data-bind="value: less"></textarea>
             <br />
         </div>
     </div>

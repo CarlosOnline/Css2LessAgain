@@ -65,6 +65,13 @@ h1.title {
   display: inline;
   padding-left: 1.5em;
 }
+h5 {
+  color: white;
+  font-size: large;
+}
+br {
+  clear: both;
+}
 textarea {
   float: left;
 }
@@ -80,8 +87,8 @@ div.allContent {
   margin-bottom: 2em;
 }
 .content {
+  margin-left: 2.5em;
   float: left;
-  width: 60%;
   border: 2px solid grey;
   background-color: #d2691e;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#d2691e), to(GoldenRod));
@@ -90,7 +97,7 @@ div.allContent {
   background-image: -o-linear-gradient(top, #d2691e, GoldenRod);
   background-image: linear-gradient(to bottom, #d2691e, GoldenRod);
   padding-top: 0.25em;
-  padding-left: 2.5em;
+  padding-left: 0.3em;
   padding-right: 0.5em;
   margin-top: 2em;
   -webkit-border-radius: 30px;
@@ -98,6 +105,7 @@ div.allContent {
   -ms-border-radius: 30px;
   -o-border-radius: 30px;
   border-radius: 30px;
+  overflow: auto;
 }
 div.forkMe {
   padding-left: 5em;
@@ -109,21 +117,27 @@ div.forkMe a {
   color: orange;
 }
 img.me {
-  float: right;
   height: 80px;
   width: 80px;
-  padding-top: 4em;
+  padding-left: 0.2em;
+  padding-top: 0.2em;
 }
-div.less {
+@media screen and (max-width: 985px) {
+  img.me {
+    display: none;
+  }
+}
+textarea.less {
   border: 1px solid grey;
   height: 300px;
-  background-color: cornsilk;
+  background-color: mediumseagreen;
   overflow: auto;
+  margin-bottom: 1em;
 }
-div.resources {
+textarea.variables {
   border: 1px solid grey;
   height: 200px;
-  background-color: aliceblue;
+  background-color: #ddd8dc;
   overflow: auto;
 }
 .settings {
@@ -204,7 +218,6 @@ div.resources {
   margin-top: 0.4em;
   padding-right: 0.5em;
   margin-right: 0.5em;
-  margin-left: 0.4em;
 }
 #settings tr {
   width: 100%;
