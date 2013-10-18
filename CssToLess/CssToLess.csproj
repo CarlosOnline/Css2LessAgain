@@ -48,6 +48,7 @@
     <Content Include="App_Scripts\linq.js" />
     <Content Include="packages.config" />
     <Content Include="Content\site.less" />
+    <None Include="Joy Of Playing.pubxml" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <None Include="Scripts\jquery-1.7.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />

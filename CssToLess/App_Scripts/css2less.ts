@@ -208,7 +208,7 @@ class css2less {
         if (!this.isUrl(value))
             return value;
 
-        var url = '"' + value.replace("url(", "").replace(")", "").replace('"', "").replace("'","") + '"';
+        var url = '"' + value.replace("url(", "").replace(")", "").replace('"', "").replace("'", "") + '"';
         var name = "@" + this.makeVariableName(parent) + "-url";
         return "url(" + this.variables.hash(name, url) + ")";
     }
@@ -410,10 +410,10 @@ class css2less {
         name = name.replace(/[^a-zA-Z0-9 \-\,]/g, "");
         name = name.replace(/[-][-]+/g, "-");
         name = name.replace(/[ ][ ]+/g, " ");
-        name = name.replace(/[ ]/g, ",");
-        name = name.replace(/[,][,]+/g, ",");
+        name = name.replace(/[ ,]/g, "-");
+        name = name.replace(/[-][-]+/g, "-");
 
-        var parts = <Array<String>> name.split(",");
+        var parts = <Array<String>> name.split("-");
         var unique = parts.unique().join("-");
         if (unique != name)
             name = unique + "-combined";

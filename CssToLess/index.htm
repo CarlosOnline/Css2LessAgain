@@ -22,86 +22,87 @@
     <div class="allContent">
         <h1 class="title">Css2Less Again</h1>
         - Convert Css To Less with variable names and expanded rules
-    <div class="settings">
-        <div id="settingsLabel" style="display: none;">
-            <a id="settingslAnchor" class="handle" href="#" data-bind="click: settings.show">Options</a>
-            <br style="clear: both;" />
-        </div>
-        <div id="settings" class="settings" style="display: none;">
-            <a href='#' data-bind="click: settings.close" title="hide" style="float: right">
-                <span class='ui-icon ui-icon-closethick' style='display: inline; float: right'></span>
-            </a>
-            <div>
-                <table>
-                    <tr>
-                        <td>
-                            <label>Mixin Prefixes</label></td>
-                        <td>
-                            <input type="text" placeholder="Mixin prefixes" title="Vender specific prefixes for mixins" data-bind="value: settings.options.vendorPrefixesListText" /></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label>Indent</label></td>
-                        <td>
-                            <input type="text" placeholder="Indent symbol (spaces and/or tabs)" title="Indent symbol (spaces and/or tabs)" data-bind="value: settings.options.indentSymbol" /></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label>Indent size</label></td>
-                        <td>
-                            <input type="number" title="Indent size" data-bind="value: settings.options.indentSize" /></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label>Seperator new line</label></td>
-                        <td>
-                            <textarea rows="1" placeholder="Vender specific prefixes for mixins" title="Vender specific prefixes for mixins" data-bind="value: settings.options.selectorSeparatorText"></textarea></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label>Block new line</label></td>
-                        <td>
-                            <input type="checkbox" title="New line for blocks" data-bind="checked: settings.options.blockFromNewLine" /></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label>Block seperator</label></td>
-                        <td>
-                            <textarea rows="1" placeholder="Seperator between blocks" title="Seperator between blocks" data-bind="value: settings.options.blockSeparatorText"></textarea></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <button data-bind="click: settings.clearCookies">Clear Cookies</button>
-                        </td>
-                    </tr>
-                </table>
+        <br />
+        <div class="settings">
+            <div id="settingsLabel" style="display: none;">
+                <a id="settingslAnchor" class="handle" href="#" data-bind="click: settings.show">Options</a>
+                <br style="clear: both;" />
             </div>
-            <hr />
-            <div class="rules" data-bind="with: settings.rulesList">
-                <b>Rules made into variables</b><br />
-                <select multiple="multiple" data-bind="options: values, selectedOptions: selected"></select>
-
-                <div class="rules-buttons">
-                    <button data-bind="click: remove.click, enable: remove.enabled">Remove</button>
-                    <button data-bind="click: sort.click, enable: sort.enabled">Sort</button>
-                    <form data-bind="submit: add.click">
-                        <input type="text" placeholder="Add css rule: font-color" data-bind='value: add.value, valueUpdate: "afterkeydown"' />
-                        <button type="submit" data-bind="enable: add.enabled">Add</button>
-                    </form>
+            <div id="settings" class="settings" style="display: none;">
+                <a href='#' data-bind="click: settings.close" title="hide" style="float: right">
+                    <span class='ui-icon ui-icon-closethick' style='display: inline; float: right'></span>
+                </a>
+                <div>
+                    <table>
+                        <tr>
+                            <td>
+                                <label>Mixin Prefixes</label></td>
+                            <td>
+                                <input type="text" placeholder="Mixin prefixes" title="Vender specific prefixes for mixins" data-bind="value: settings.options.vendorPrefixesListText" /></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Indent</label></td>
+                            <td>
+                                <input type="text" placeholder="Indent symbol (spaces and/or tabs)" title="Indent symbol (spaces and/or tabs)" data-bind="value: settings.options.indentSymbol" /></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Indent size</label></td>
+                            <td>
+                                <input type="number" title="Indent size" data-bind="value: settings.options.indentSize" /></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Seperator new line</label></td>
+                            <td>
+                                <textarea rows="1" placeholder="Vender specific prefixes for mixins" title="Vender specific prefixes for mixins" data-bind="value: settings.options.selectorSeparatorText"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Block new line</label></td>
+                            <td>
+                                <input type="checkbox" title="New line for blocks" data-bind="checked: settings.options.blockFromNewLine" /></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Block seperator</label></td>
+                            <td>
+                                <textarea rows="1" placeholder="Seperator between blocks" title="Seperator between blocks" data-bind="value: settings.options.blockSeparatorText"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button data-bind="click: settings.clearCookies">Clear Cookies</button>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
+                <hr />
+                <div class="rules" data-bind="with: settings.rulesList">
+                    <b>Rules made into variables</b><br />
+                    <select multiple="multiple" data-bind="options: values, selectedOptions: selected"></select>
+
+                    <div class="rules-buttons">
+                        <button data-bind="click: remove.click, enable: remove.enabled">Remove</button>
+                        <button data-bind="click: sort.click, enable: sort.enabled">Sort</button>
+                        <form data-bind="submit: add.click">
+                            <input type="text" placeholder="Add css rule: font-color" data-bind='value: add.value, valueUpdate: "afterkeydown"' />
+                            <button type="submit" data-bind="enable: add.enabled">Add</button>
+                        </form>
+                    </div>
+                </div>
+                <br style="clear: both;" />
             </div>
-            <br style="clear: both;" />
         </div>
-    </div>
         <div class="content">
             <div class="forkMe">
                 Fork me on github: <a href="https://github.com/CarlosOnline/Css2LessAgain">https://github.com/CarlosOnline/Css2LessAgain</a>
             </div>
             <div>
-            <textarea id="css" rows="10" cols="100" placeholder="Paste your css here" data-bind="value: css, valueUpdate: 'afterkeydown'">
+                <textarea id="css" rows="10" cols="100" placeholder="Paste your css here" data-bind="value: css, valueUpdate: 'afterkeydown'">
             </textarea>
-            <img class="me" src="images/me.jpg" />
-                </div>
+                <img class="me" src="images/me.jpg" />
+            </div>
             <input style="display: none;" type="button" value="Go" data-bind="click: go.click, enable: go.enabled" />
             <br />
             <h5>Variables & Mixins only</h5>

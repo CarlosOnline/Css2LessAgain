@@ -532,10 +532,10 @@ var css2less = (function () {
         name = name.replace(/[^a-zA-Z0-9 \-\,]/g, "");
         name = name.replace(/[-][-]+/g, "-");
         name = name.replace(/[ ][ ]+/g, " ");
-        name = name.replace(/[ ]/g, ",");
-        name = name.replace(/[,][,]+/g, ",");
+        name = name.replace(/[ ,]/g, "-");
+        name = name.replace(/[-][-]+/g, "-");
 
-        var parts = name.split(",");
+        var parts = name.split("-");
         var unique = parts.unique().join("-");
         if (unique != name)
             name = unique + "-combined";
